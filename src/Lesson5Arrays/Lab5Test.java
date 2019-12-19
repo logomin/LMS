@@ -98,6 +98,8 @@ public class Lab5Test {
 
         // PART 4*
 
+        System.out.println();
+
 
         long[][] matrix = new long[9][9];
 
@@ -107,9 +109,36 @@ public class Lab5Test {
             Arrays.fill(row, ++ratio);
         }
 
-        int sum = 0;
+
+        for (long[] row : matrix) {
+            for (long value : row) {
+                System.out.print(value + "\t");
+            }
+            System.out.print("\n");
+        }  // TODO fill array with any numbers in cycles.
+
+
+        long max_value = Long.MIN_VALUE, min_value = Long.MAX_VALUE;
+
+        int sum = 0, count = 1;
+        for (long[] row : matrix) {
+            if (count > 2 && count <= 5) {
+                for (int i = 0; i < row.length; i++) {
+                    if ((i + 1) % 3 == 0) {
+                        if (row[i] > max_value) max_value = row[i];
+                        if (row[i] < min_value) min_value = row[i];
+                    }
+                }
+            }
+            count += 1;
+        }
+
+        System.out.println("max_value " + max_value);
+        System.out.println("min_value " + min_value);
+
         // TODO* calc sum only max and min values of matrix by expression: 2 < i <= 5 and only every third j value.
-        System.out.println(sum);
+        long sum2 = max_value + min_value;
+        System.out.println("sum only max and min values of matrix is " + sum2);
     }
 
 }
