@@ -1,6 +1,6 @@
 package Lesson15Interfaces;
 
-public class Dialphone extends Phone {
+public class Dialphone extends Phone implements Caller {
     boolean hasAnswerphone;
 
     @Override
@@ -14,11 +14,13 @@ public class Dialphone extends Phone {
     }
 
     @Override
-    void call() {
-        System.out.println("Звоним");
+    public void call() {
+        System.out.println("Звоню (обычный телефон)");
     }
 
     void autoAnswer(){
         System.out.println("Автоответчик");
     }
+
+
 }

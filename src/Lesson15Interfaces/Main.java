@@ -11,6 +11,15 @@ public class Main {
         smartphone.call();
         dialphone.call();
         multicooker.cook();
-        oven.powerOff();
+        //oven.powerOff();
+        PowerOffAll(oven, dialphone, smartphone);
+
     }
+
+    public static void PowerOffAll(AbstractDevice ... devices){
+        for (AbstractDevice device: devices) {
+            device.powerOff();
+        }
+    }
+
 }

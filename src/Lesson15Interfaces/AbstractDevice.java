@@ -6,7 +6,7 @@ abstract class AbstractDevice {
     abstract void powerOn();
     abstract void powerOff();
 
-    public AbstractDevice() {
+    AbstractDevice() {
         powerOn();
     }
 }
